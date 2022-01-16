@@ -1,0 +1,17 @@
+#first-slide{
+    background-image: url('https://i.ibb.co/HxJ6vbH/pexels-eberhard-grossgasteiger-691668.jpg');
+ background-color: rgba(9, 153, 236, 0.7);
+}
+#second-slide{
+    background-image: url("https://i.ibb.co/WcTZYYv/pexels-aleksandar-pasaric-325185.jpg");
+}
+#third-slide{
+    background-image: url('https://i.ibb.co/hYzK82Q/pexels-francesco-ungaro-2325446.jpg');
+}
+
+.slide-img{
+  
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,33 @@
+[
+    { 
+        "key":"1",
+        "icon":"https://i.ibb.co/MCFRF9W/trust.png",
+        "title":"100% Trusted Service",
+        "desc":"we have been providing our service for last 10 years and we rank #1 all over the country"
+
+    },
+    { 
+        "key":"2",
+        "icon":"https://i.ibb.co/LvmHGSW/customer-service.png",
+        "title":"24/7 Customer Care",
+        "desc":"you can contact with us anytime and we'll always resolve your problems"
+
+    },
+    { 
+        "key":"3",
+        "icon":"https://i.ibb.co/crg9XRS/discount.png",
+        "title":"Best Price Guranteed",
+        "desc":"we ensure you to get the best price besides we have many offers during occassions"
+
+    },
+    { 
+        "key":"4",
+        "icon":"https://i.ibb.co/D4cgZym/hassle-free.png",
+        "title":"Hassle Free Service",
+        "desc":"our team will provide you all the legal documents so no hassle for you"
+
+    }
+]
+
+
+
