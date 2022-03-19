@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../icons/calendar.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,10 +6,19 @@ import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-  const {user,signInUsingGoogle,signInUsingFacebook}=useAuth();
+  const {user,signInUsingGoogle,signInUsingFacebook,registerUsingPassword}=useAuth();
+  const emailRef=useRef();
+  const passRef=useRef();
   const navigate=useNavigate();
-  const formButton=()=>{
-    alert('form authentication is invalid now! ')
+  
+
+  const handleRegister=()=>{
+
+  const email=emailRef.current.value;
+  const password=passRef.current.value;
+   registerUsingPassword()
+   alert("Login System is currently disabled by admin")
+    
   }
     return (
         <div className='mb-5'>
@@ -31,19 +40,15 @@ const Register = () => {
       <input type="hidden" name="remember" value="true"/>
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
-          <label htmlFor="name" className="sr-only">Email address</label>
           <input id="name" name="name" type="text" autoComplete="" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter Name"/>
         </div>
         <div>
-          <label htmlFor="email-address" className="sr-only">Email address</label>
           <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address"/>
         </div>
         <div>
-          <label htmlFor="password" className="sr-only">Password</label>
           <input id="password" nme="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password"/>
         </div>
         <div>
-          <label htmlFor="password2" className="sr-only">Password</label>
           <input id="password2" name="password2" type="password"  required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Re-Enter Password"/>
         </div>
       </div>
@@ -64,7 +69,7 @@ const Register = () => {
       </div>
 
       <div>
-        <button onClick={formButton} type="submit"  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button onClick={handleRegister} type="submit"  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           <span className="absolute left-0 inset-y-0 flex items-center pl-3">
             {/* <!-- Heroicon name: solid/lock-closed --> */}
             <svg className="h-5 w-5 text-white group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

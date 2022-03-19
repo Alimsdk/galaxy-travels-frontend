@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import ManageOrder from '../ManageOrder/ManageOrder';
 
 const ManageOrders = () => {
@@ -10,7 +9,7 @@ const ManageOrders = () => {
         .then(data=>setOrders(data))
     },[])
     return (
-        <div>
+        <div className='grid grid-cols-2 gap-x-20 gap-y-12 sm:mx-9'>
        
             {
                 orders?.map(order=><ManageOrder order={order} key={order._id}></ManageOrder>)

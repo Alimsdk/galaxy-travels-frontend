@@ -10,6 +10,7 @@ import AuthProvider from './Context/AuthProvider';
 import BookService from './components/BookService/BookService';
 import PackageDetail from './components/PackageDetail/PackageDetail';
 import ManageOrders from './components/ManageOrders/ManageOrders';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path='manageOrders' element={<ManageOrders/>}/>
       <Route path='register' element={<Register/>}/>
       <Route path='login' element={<LogIn/>}/>
+      <Route path='/*' element={<NotFound/>}/>
      </Routes>
      <Footer></Footer>
     </BrowserRouter>

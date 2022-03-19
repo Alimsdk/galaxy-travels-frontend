@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import logoImg from '../../icons/calendar.png'
+import { HashLink } from 'react-router-hash-link';
+
 const Header = () => {
   const {user,logOut}=useAuth();
     const [mobileMenu,setMobileMenu]=useState(false);
@@ -41,18 +43,18 @@ const Header = () => {
         <div className="hidden sm:block ">
           <div className="flex  space-x-4">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-            <Link to="/home#header" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</Link>
+            <HashLink to="/home#header" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</HashLink>
 
-            <Link to="/home#qualities" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
+            <HashLink to="/home#qualities" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</HashLink>
 
-            <Link to="/home#services" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</Link>
+            <HashLink as={HashLink} to="/home#services" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</HashLink>
 
-            <Link to="/home#packages" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Our Packages</Link>
+            <HashLink as={HashLink} to="/home#packages" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Our Packages</HashLink>
         
-            <Link to="/home#footer" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact Us</Link>
+            <HashLink as={HashLink} to="/home#footer" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact Us</HashLink>
 
         { !user ?  <div>
-          <Link className="text-white py-2 underline  underline-offset-1" to='login'>LogIn</Link>
+          <HashLink className="text-white py-2 underline  underline-offset-1" to='login'>LogIn</HashLink>
 
             <button className="px-6 ml-3 py-2 text-sm transition-colors duration-300 border-2 rounded-full shadow-xl text-amber-500 border-amber-400 shadow-amber-300/30 hover:bg-amber-500 hover:text-cyan-100" onClick={()=>navigate('register')}>Register</button>
         </div> :
@@ -76,19 +78,19 @@ const Header = () => {
  { mobileMenu && <div className="sm:hidden text-center" id="mobile-menu">
     <div className="px-2 pt-2 pb-3 space-y-1">
       {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-      <Link to="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</Link>
+      <HashLink to="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</HashLink>
 
-      <Link to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</Link>
+      <HashLink to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</HashLink>
 
-      <Link to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</Link>
+      <HashLink to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</HashLink>
 
-      <Link to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our Packages</Link>
+      <HashLink to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our Packages</HashLink>
      
-      <Link to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact Us</Link>
+      <HashLink to="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact Us</HashLink>
    
       { !user ?  <div>
 
-          <Link className="text-white py-2 underline  underline-offset-1" to='login'>LogIn</Link>
+          <HashLink className="text-white py-2 underline  underline-offset-1" to='login'>LogIn</HashLink>
             <button className="px-6 ml-3 py-2 text-sm transition-colors duration-300 border-2 rounded-full shadow-xl text-amber-500 border-amber-400 shadow-amber-300/30 hover:bg-amber-500 hover:text-cyan-100" onClick={()=>navigate('register')}>Register</button>
         </div> :
        <div>

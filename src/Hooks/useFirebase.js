@@ -1,5 +1,5 @@
 import initializeAuthentication from "../Firebase/firebase.initialize";
-import { FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 initializeAuthentication();
@@ -30,6 +30,16 @@ const useFirebase=()=>{
 
     }
 
+    const registerUsingPassword=(email,password)=>{
+        createUserWithEmailAndPassword(auth,email,password)
+        .then(result=>{
+            const user=result.user;
+            setUser(user);
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+
     useEffect(()=>{
        const unsubscribe= onAuthStateChanged(auth,user=>{
             if(user){
@@ -49,7 +59,7 @@ const useFirebase=()=>{
       });
    }
 
-   return {signInUsingGoogle,user,setUser,signInUsingFacebook,logOut};
+   return {signInUsingGoogle,user,setUser,signInUsingFacebook,logOut,registerUsingPassword};
 
 }
 

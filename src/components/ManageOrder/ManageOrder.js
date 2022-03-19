@@ -7,10 +7,10 @@ import React, { useEffect, useState } from 'react';
     const {_id,address,email,name,people,vehicle}=order;
    
     useEffect(()=>{
-        fetch(`https://frozen-headland-44864.herokuapp.com/${_id}`)
+        fetch(`https://frozen-headland-44864.herokuapp.com/tickets${_id}`)
         .then(res=>res.json())
         .then(data=>setManageOrder(data))
-    },[])
+    },[manageOrder])
       
     
 
@@ -33,19 +33,13 @@ import React, { useEffect, useState } from 'react';
         
     
     return (
-        <div className='bg-amber-500 my-9 flex justify-around items-center'>
-            <div  className='py-5'>
-            <h2 className='text-white text-3xl py-3'> Booked By  : {name}</h2>
-              <p className='text-white text-xl pb-3'>Email : {email}</p>
-            </div>
-            <div className='py-5'>
-            <p className='text-white text-2xl py-2'>Address : {address}</p>
-              <p className='text-white text-xl py-2'>Ticket Booked for : {people} peoples</p>
-              <p  className='text-white text-xl py2' > Vehicle Type : {vehicle}</p>
-            </div>
-            <div>
-                <button className='bg-slate-800 text-white px-5 py-1  rounded' onClick={handleCancelOrder}>Cancel Order</button>
-            </div>
+        <div className='bg-indigo-500 px-5 py-3 mt-9 rounded text-white'>
+            <h2>Booked By : {name}</h2>
+            <h3>Email : {email}</h3>
+            <h3>From : {address}</h3>
+            <h3>Seats booked for {people} peoples</h3>
+            <h3>Vehicle Type : {vehicle}</h3>
+            <button onClick={handleCancelOrder} className='bg-red-500 px-5 py-1 flex mx-auto mt-3 rounded-2xl'>Cancel Order</button>
         </div>
     )}
 

@@ -9,7 +9,7 @@ const BookService = () => {
     const navigate=useNavigate();
 
     useEffect(()=>{
-        fetch(`https://frozen-headland-44864.herokuapp.com/${_id}`)
+        fetch(`https://frozen-headland-44864.herokuapp.com/services/${_id}`)
         .then(res=>res.json())
         .then(data=>setService(data));
     },[])
